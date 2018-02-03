@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>'
+    <link rel="stylesheet" type="text/css" href="CSS/coursecata.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+        .desc-image img {width:100%;}
+        .desc-title h2 {font-weight:700;font-size: 40px}
+        .desc-title h4 {font-weight:700;}
+        .desc-title p { font-size: 32px}
+
+        /* http://www.jquery2dotnet.com/ */
+        body{ margin-top:20px;}
+        .glyphicon { margin-right:5px;}
+        .rating .glyphicon {font-size: 22px;}
+        .rating-num { margin-top:0px;font-size: 54px; }
+        .progress { margin-bottom: 5px;}
+        .progress-bar { text-align: left; }
+        .rating-desc .col-md-3 {padding-right: 0px;}
+        .sr-only { margin-left: 5px;overflow: visible;clip: auto; }
+
+        body {
+            padding-top: 70px;
+        }
+        .btn-grey{
+            background-color:#D8D8D8;
+            color:#FFF;
+        }
+        .rating-block{
+            background-color:#FAFAFA;
+            border:1px solid #EFEFEF;
+            padding:15px 15px 20px 15px;
+            border-radius:3px;
+        }
+        .bold{
+            font-weight:700;
+        }
+        .padding-bottom-7{
+            padding-bottom:7px;
+        }
+
+        .review-block{
+            background-color:#FAFAFA;
+            border:1px solid #EFEFEF;
+            padding:15px;
+            border-radius:3px;
+            margin-bottom:15px;
+        }
+        .review-block-name{
+            font-size:12px;
+            margin:10px 0;
+        }
+        .review-block-date{
+            font-size:12px;
+        }
+        .review-block-rate{
+            font-size:13px;
+            margin-bottom:15px;
+        }
+        .review-block-title{
+            font-size:15px;
+            font-weight:700;
+            margin-bottom:10px;
+        }
+        .review-block-description{
+            font-size:13px;
+        }
+    </style>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center " style="background: lightblue">
+    <h1> Course Registration App</h1>
+    <p> University of Missouri Kansas City</p>
+</div>
+
+<div class="description-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3  " style="margin-top: 5%">
+                <div class="desc-image">
+                    <img src=" https://www.spigot.com/wp-content/uploads/2017/07/Software-Engineer-Pic.jpeg" >
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="desc-title">
+                    <h2>COMP-SCI 5542 - Advance Software Engineering</h2>
+                    <!--<div class="container">-->
+                    <table class="table">
+                        <thead>
+                        <tr class="table-primary">
+                            <th> Days & Times </th>
+                            <th>Room</th>
+                            <th>Instructor</td>
+                            <th>Meeting Dates</th>
+                            <th>Credit hours</th>
+                        </tr>
+                        </thead>
+                        <tbody style="font-size: 32px">
+                        <tr>
+                            <td>TuTh 2:30PM - 3:45PM</td>
+                            <td>Education-Rm 00115</td>
+                            <td>Yugyung Lee</td>
+                            <td>01/16/2018 - 05/11/2018</td>
+                            <td>   3   </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--</div>-->
+
+                </div>
+                <br>
+
+
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="../navbar/">Default</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </nav>
+
+                <!--<div class="container">-->
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <!-- http://www.jquery2dotnet.com/ -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="well well-sm">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6 text-center">
+                                                    <h1 class="rating-num">
+                                                        4.0</h1>
+                                                    <div class="rating">
+                                                        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                            </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                            </span><span class="glyphicon glyphicon-star-empty"></span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="glyphicon glyphicon-user"></span>1,050 total
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="row rating-desc">
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>5
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress progress-striped">
+                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                                                     aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                                    <span class="sr-only">80%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 5 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>4
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                                                     aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                                    <span class="sr-only">60%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 4 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>3
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                                                     aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                                    <span class="sr-only">40%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 3 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>2
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
+                                                                     aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                                    <span class="sr-only">20%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 2 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>1
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
+                                                                     aria-valuemin="0" aria-valuemax="100" style="width: 15%">
+                                                                    <span class="sr-only">15%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 1 -->
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <hr/>
+                                    <div class="review-block">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                                <div class="review-block-name"><a href="#"> Robert</a></div>
+                                                <div class="review-block-date">January 20, 2010</div>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <div class="review-block-rate">
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="review-block-title"> Superb</div>
+                                                <div class="review-block-description"> This was excellent course . wonderful expriences . Lot to learn </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                                <div class="review-block-name"><a href="#"> kalyan</a></div>
+                                                <div class="review-block-date">January 28, 2016</div>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <div class="review-block-rate">
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="review-block-title"> Tricky Course</div>
+                                                <div class="review-block-description"> Superb course . Must for those who aspire to be a software developer </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                                <div class="review-block-name"><a href="#"> chaitanya</a></div>
+                                                <div class="review-block-date">January 29, 2016</div>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <div class="review-block-rate">
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="review-block-title">Lot of course work</div>
+                                                <div class="review-block-description">This was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                <!--</div> &lt;!&ndash; /container &ndash;&gt;-->
+
+
+                <!-- Bootstrap core JavaScript
+                ================================================== -->
+                <!-- Placed at the end of the document so the pages load faster -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+                <script src="js/bootstrap.min.js"></script>
+                <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
