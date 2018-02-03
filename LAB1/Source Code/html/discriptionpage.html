@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>'
+    <link rel="stylesheet" type="text/css" href="CSS/coursecata.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+        .desc-image img {width:100%;}
+        .desc-title h2 {font-weight:700;font-size: 40px}
+        .desc-title h4 {font-weight:700;}
+        .desc-title p { font-size: 32px}
+    </style>
+</head>
+<body>
+<div class="jumbotron text-center " style="background: lightblue">
+    <h1> Course Registration App</h1>
+    <p> University of Missouri Kansas City</p>
+</div>
+
+<div class="description-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3  " style="margin-top: 5%">
+                <div class="desc-image">
+                    <img src=" https://www.spigot.com/wp-content/uploads/2017/07/Software-Engineer-Pic.jpeg" >
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="desc-title">
+                    <h2>COMP-SCI 5542 - Advance Software Engineering</h2>
+                    <table class="table">
+                        <thead>
+                        <tr class="table-primary">
+                            <th> Days & Times </th>
+                            <th>Room</th>
+                            <th>Instructor</td>
+                            <th>Meeting Dates</th>
+                            <th>Credit hours</th>
+                        </tr>
+                        </thead>
+                        <tbody style="font-size: 32px">
+                        <tr>
+                            <td>TuTh 2:30PM - 3:45PM</td>
+                            <td>Education-Rm 00115</td>
+                            <td>Yugyung Lee</td>
+                            <td>01/16/2018 - 05/11/2018</td>
+                            <td>   3   </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--</div>-->
+
+                </div>
+                <br>
+
+                <div class="row" style="font-size: 32px">
+                    <div class="col-md-4"> Total Seats : 40 </div>
+                    <div class="col-md-4"> Available Seats : <span id="demo">23</span> </div>
+                    <div class="col-md-4"> Status : <button type="button" class="btn btn-success">Open</button> </div>
+                </div>
+                <br>
+                <br>
+
+
+                <div class="container" style="width: 50%">
+                    <div class="row">
+                     <div class="col-md-4">   <a href="#"  class=" btn btn-block btn-primary btn-primary"><span class="glyphicon glyphicon-user"></span> Search</a>
+                     </div>
+                        <div class="col-md-4" id="demo1">
+                        <a href="#"  class=" btn btn-block btn-primary btn-primary" onclick="myFunction()"><span class="glyphicon glyphicon-user"></span> Enroll </a>
+                        </div>
+                        </div>
+                </div>
+
+                <div id="myDIV" style="display: none ;width: 30%;" class=" jumbotron text-center ">
+                    <h1> You are successfully Registeted to this course </h1>
+                    <h1> seats left : 22 </h1>
+
+                </div>
+
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myDIV");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            var y = document.getElementById("demo")
+                            y.innerHTML=" 22"
+                            document.getElementById("demo1").style.display="none";
+                        } else {
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
