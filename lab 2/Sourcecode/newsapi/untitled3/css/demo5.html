@@ -1,0 +1,138 @@
+<! doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <script      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="demo.css">
+
+    <form>
+        <br>
+        <div class="form-group"> <label for="movie">Enter Movie Name:</label>
+            <input type="text" class="form-control" id="movie" />
+        </div>
+
+        <button id="btn" onclick="p_oEvent();" href="javascript:;">Submit</button><br>
+    </form>
+
+    <!--<div id="container1">-->
+
+    <!--<b> &nbsp;Movie Name:</b><p class="title">Title</p>-->
+    <!--<b>&nbsp;Plot:</b><p class="plot">Plot</p>-->
+    <!--<span class="poster">Poster</span>-->
+    <!--<b>&nbsp;Released:</b><p class="released">Year</p>-->
+    <!--<b>&nbsp;Actors:</b><p class="actors">Actors</p>-->
+    <!--<b>&nbsp;Writer:</b><p class="writer">Writer</p>-->
+    <!--<b>&nbsp;Language:</b><p class="language">Language</p>-->
+    <!--<b>&nbsp;IMDb Rating :</b><p class="imdbRating">imdbRating</p><br>-->
+    <!--<b>&nbsp;Sentiment Analysis using Alchemy API<br><br>&nbsp;Movie Review :</b><p class="tomatoConsensus">tomatoConsensus</p>-->
+    <!--</div>-->
+
+    <div id="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            <div class="posterpath" id="pic-1">Posterpath</div>
+                        </div>
+                        <!--<ul class="preview-thumbnail nav nav-tabs">-->
+                        <!--<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>-->
+                        <!--</ul>-->
+
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title"> <p class="title">Title</p> </h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                        <p class="description">description</p>
+                        <!--<h4 class="price">current price: <span>$180</span></h4>-->
+                        <!--<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>-->
+
+                        <!--<h5 class="colors">colors:-->
+                        <!--<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>-->
+                        <!--<span class="color green"></span>-->
+                        <!--<span class="color blue"></span>-->
+                        <!--</h5>-->
+                        <div class="action">
+                            <button class="Actors" type="button">Actors</button>
+                            <button class="imdbRating" type="button"> IMDB rating </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var review,score;
+        var $Form = $('form'), $Container = $('#container');
+        $Container.hide();
+        $Form.on('submit', function(p_oEvent){
+            var url,movie, data;
+            p_oEvent.preventDefault();
+            movie = $Form.find('input').val();
+            url = 'http://api.cinemalytics.in/v2/movie/title/?value='+movie+'&auth_token=65D5CDADA0F9353077319E52E422C3A7'
+            $.ajax(url, {
+                complete: function(sample){
+                    data = $.parseJSON(sample.responseText);
+                    console.log(data);
+                    $Container.find('.title').text(data.Title);
+                    $Container.find('.Description').text(data.Description);
+                    $Container.find('.posterpath').html('<img src="' + data.Posterpath + '"/>');
+                    $Container.find('.released').text(data.Released);
+                    $Container.find('.actors').text(data.Actors);
+                    $Container.find('.writer').text(data.Writer);
+                    $Container.find('.language').text(data.Language);
+                    $Container.find('.imdbRating').text(data.imdbRating);
+                    $Container.find('.tomatoConsensus').text(data.tomatoConsensus);
+                    //alert(text(data.imdbRating));
+                    $Container.show();
+
+                }
+            });
+        });
+        var $Form = $('form');
+
+        $Form.on('submit', function(p_oEvent){
+            var url,movie, datas;
+            p_oEvent.preventDefault();
+            movie = $Form.find('input').val();
+            url = 'http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment?apikey=332172cbd4c2bc9ce2e8315648bc12b540c5ff6b&outputMode=json&text='+movie+' movie';
+            $.ajax(url, {
+                complete: function(sample){
+                    datas = $.parseJSON(sample.responseText);
+                    console.log(datas);
+
+                    var div = document.createElement("div");
+                    div.innerHTML = "<b>&nbsp;Sentiment of the review: </b>"+datas.docSentiment.type+"<b><br>&nbsp;Sentiment Score of the review:</b> "+datas.docSentiment.score+"";
+                    //document.write(review);
+                    document.getElementById("container").appendChild(div);
+
+
+
+                }
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+</body>
+</html>
