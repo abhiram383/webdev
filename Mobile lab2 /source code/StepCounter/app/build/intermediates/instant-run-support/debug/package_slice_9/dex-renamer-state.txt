@@ -1,0 +1,4 @@
+#Wed Aug 23 16:22:15 CDT 2017
+base.0=/home/karthik/study/TA/MobileDev/trails/StepCounter/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9
+renamed.0=classes.dex
+file.0=/home/karthik/study/TA/MobileDev/trails/StepCounter/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex

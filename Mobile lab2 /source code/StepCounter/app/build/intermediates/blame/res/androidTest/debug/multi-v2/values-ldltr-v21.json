@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/karthik/StepCounter/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "/home/karthik/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/480d95e949189a704b7332b60361a4a7/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}
