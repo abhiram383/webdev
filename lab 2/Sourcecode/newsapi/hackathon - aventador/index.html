@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+    <style>
+        hr{
+            color: red;
+            height: 20px;
+        }
+        .pdesc {
+            font-size: 24px;
+            font-family: 'News Cycle', sans-serif;
+        }
+        .p-title{
+            font-size: 32px;
+            font-family: 'News Cycle', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function myFunction() {
+            $(document).ready(function () {
+               // var k = document.getElementById("myText").value;
+                //var x = prompt('enter a keyword');
+
+                var k = "data2.json" ;
+             //   var y = "data2.json";
+               // var k = document.getElementById('myText').value;
+//var ka = prompt('enter a value');
+                //alert(k);
+// var k ;
+                if (document.getElementById('dropdown').value == "travel"){
+                    k = "data.json";
+                }
+               else if (document.getElementById('dropdown').value == "menacc")
+                {
+                    k="data2.json";
+                }
+                 if ( document.getElementById("dropdown").value== "electronics"){
+
+                    k="data3.json"
+                }
+                if ( document.getElementById("myText").value== "electronics"){
+
+                    k="data3.json"
+                }
+
+
+
+
+
+               // y = prompt('enter a source')
+                $.ajax({
+                  //url: "https://newsapi.org/v2/everything?q=itcoin&from=2018-02-11&sortBy=popularity&apiKey=2fa7579aad404eb1940022ebffb5f26e",
+                    // url: "https://newsapi.org/v2/everything?q=" + k + "&sources=" + y + "&apiKey=2fa7579aad404eb1940022ebffb5f26e",
+                // url:"https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id=chicago&filters=category:automotive&offset=0&limit=5",
+
+
+                   // url :"https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&division_id=chicago&filters=category:jewelry-and-watches&offset=0&limit=1" ,
+                    url :k,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (res) {
+                        //$('#result').html(res.articles[0].author)
+                        // document.getElementById('#demonews').innerHTML = "hello";
+                        var htmlText = '<div class ="row">';
+                        $.each(res.deals, function (i,f) {
+                            // var tblRow = "<tr>" + "<td>" + res.articles[i].author + "</td>" +"<td>" + res.articles[i].title+ "</td>" +"<td>" + res.articles[i].description+ "</td>"+"<td> + <img  style='width: 250px; height:250px ' src=\" "+ res.articles[i].urlToImage+"\"> + </td>" +"</tr>"
+                            //
+                            // $(tblRow).appendTo("#userdata tbody");
+                           //  htmlText += '<div class="div-conatiner">';
+                           //  htmlText += '<div class="row">';
+                           //  htmlText += '<div class="col-md-9">';
+                           //  htmlText += '<p class="p-name"> Name: ' + res.a[i].source.name + '</p>';
+                           //  htmlText += '<p class="p-title">' + res.deals[i].title+ '</p>';
+                           //  htmlText += '<p class="p-created"> Created by: ' + res.articles[i].author + '</p>';
+                           //  htmlText += '<p class="pdesc"> Description: ' + res.articles[i].description + '</p>';
+                           // htmlText += '<p class="p-uname"> Date : ' + res.articles[i].publishedAt + ' <strong>|</strong> Source :' + res.articles[i].source.name + '</p>';
+                           //  htmlText += '</div >';
+                           //  htmlText += '<div class="col-md-3">';
+                           // htmlText += '<p class="p-uname">' + "<img  style='width: 250px; height:250px ' src=\" " + res.articles[i].urlToImage + "\"> " + '</p>';
+                           //  htmlText += '</div >';
+                           //  htmlText += '</div >';
+                           //  htmlText += '</div>';
+
+
+
+
+                            htmlText += '<div class="col-md-3">';
+
+
+
+
+                            htmlText += '<div class="col">';
+                          //  htmlText += '<p class="p-name" class="p-uname" style=" height: 100px;width: 120px; text-overflow:ellipsis ; white-space: nowrap;overflow: hidden; "> Name: ' + res.deals[i].title + '</p>';
+
+                            htmlText += '<p class="p-title" style=" width: 100%; text-overflow: ellipsis; white-space: nowrap;\n' +
+                                'overflow: hidden;">' + res.deals[i].shortAnnouncementTitle + '</p>';
+                            htmlText += '<div class="col">';
+                            htmlText += '<p class="p-uname">' + "<img  style='width: 100%; height:30% ' src=\" " + res.deals[i].largeImageUrl + "\"> " + '</p>';
+
+                            htmlText += '</div >';
+
+
+
+                            htmlText += '<p class="p-created"> Created by: ' + res.deals[i].type + '</p>';
+                            htmlText += '<p class="pdesc"  > Description: ' + res.deals[i].announcementTitle+ '</p>';
+
+                            htmlText += '<p> '+ 'Discountpercentage :'+res.deals[i].options[0].discountPercent + '</p>'
+                            htmlText += '<p class="p-uname" style=" height: 20px;width: 120px; text-overflow:ellipsis ; white-space: nowrap;overflow: hidden; "> Price : ' + res.deals[i].options[0].discount.formattedAmount + '</p>';
+
+
+                            htmlText += '<a href="'+ res.deals[i].options[0].buyUrl+' "><button type="button"  class="btn btn-success">Redeem</button></a>'
+
+                            htmlText += '</div >';
+
+                            htmlText += '</div >';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            //  //htmlText += '<hr style="width: 100%; color: darkblue; height: 1px; background-color:darkred;" />';
+                        });
+                        htmlText += '</div>'
+                        $('#demonews').html(htmlText);
+                       // console.log(res);
+                    }
+                });
+            })
+        }
+    </script>
+</head>
+<body>
+
+<div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#"> <img  style="height:50px ; width: 100px;" src="http://deals.greaternoidaweb.in/images/dealslogo.png"></a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#">Link 1</a>-->
+            <!--</li>-->
+            <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#">Link 2</a>-->
+            <!--</li>-->
+
+            <!-- Dropdown -->
+            <!--<li class="nav-item dropdown">-->
+
+            <!--<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">-->
+            <!--Source-->
+            <!--</a>-->
+
+            <select id="dropdown" class="form-control form-control-lg">
+                <option value="travel">Travel</option>
+                <option value="menacc">Clothing</option>
+                <option>Health and Beauty </option>
+                <option>Watches </option>
+                <option value="electronics">Electronics</option>
+
+            </select>
+
+
+
+
+
+            </li>
+
+        </ul>
+
+
+        <input id="myText" style="margin : 10px" class="form-control col-md-3" type="text" placeholder="Search Deals">
+        <button class="btn btn-success col-md-1" onclick="myFunction()" type="submit">Search</button>
+        <!--<a class="btn btn-success col-md-1" href="admin.html" type="submit">admin</a>-->
+
+        <a class="page-link" style="alignment: right" href="admin.html">Admin</a>
+
+    </nav>
+
+</div>
+<div id="demonews"  style="width:95% ; border:1px black solid" class="container col-md-11"></div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+htmlText += '<div class="col-md-3">';
+
+
+
+
+    htmlText += '<div class="col">';
+        htmlText += '<p class="p-name"> Name: ' + res.deals[i].id + '</p>';
+
+        htmlText += '<p class="p-title" style=" width: 100%; text-overflow: ellipsis; white-space: nowrap;\n' +
+                               'overflow: hidden;">' + res.deals[i].title + '</p>';
+        htmlText += '<div class="col">';
+            htmlText += '<p class="p-uname">' + "<img  style='width: 250px; height:250px ' src=\" " + res.deals[i].mediumImageUrl + "\"> " + '</p>';
+
+            htmlText += '</div >';
+
+
+
+        htmlText += '<p class="p-created"> Created by: ' + res.deals[i].discountPercent + '</p>';
+        htmlText += '<p class="pdesc" style="hover:overflow:visible ;width: 180px; text-overflow:ellipsis ; white-space: nowrap;overflow: hidden; " > Description: ' + res.deals[i].announcementTitle+ '</p>';
+
+
+        htmlText += '<p class="p-uname"> Date : ' + res.deals[i].startAt + ' <strong>|</strong> Source :' + res.deals[i].title+ '</p>';
+        htmlText += '</div >';
+
+    htmlText += '</div >';
+
